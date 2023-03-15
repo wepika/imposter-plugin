@@ -43,7 +43,7 @@
         {
             "type": "vcs",
             "url": "git@github.com:wepika/imposter.git"
-        },
+        }
     ],
     "config": {
         "sort-packages": true
