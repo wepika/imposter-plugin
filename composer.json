@@ -28,7 +28,7 @@
     "require": {
         "php": "^7.3 || ^8.0",
         "composer-plugin-api": "^1.1 || ^2.0",
-        "wepika/imposter": "^0.6.1"
+        "wepika/imposter": "dev-master"
     },
     "require-dev": {
         "codeception/codeception": "^4.1",
