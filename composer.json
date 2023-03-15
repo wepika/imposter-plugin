@@ -1,5 +1,5 @@
 {
-    "name": "typisttech/imposter-plugin",
+    "name": "wepika/imposter-plugin",
     "type": "composer-plugin",
     "description": "Composer plugin that wraps all composer vendor packages inside your own namespace. Intended for WordPress plugins.",
     "keywords": [
