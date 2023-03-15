@@ -42,7 +42,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:wepika/imposter.git"
+            "url": "git@github.com:wepika/imposter.git",
+            "branch": "master"
         }
     ],
     "config": {
