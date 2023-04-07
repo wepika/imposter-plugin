@@ -92,7 +92,7 @@ class Transformer
         $projectNameSpace = $projectConfig->getImposterNamespace();
 
         foreach ($arrayContent['packages'] as &$package) {
-            if (!isset($package['autoload']) && !isset($package['autoload']['psr-4'])) {
+            if (!isset($package['autoload']) || !isset($package['autoload']['psr-4'])) {
                 continue;
             }
 
