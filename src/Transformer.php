@@ -33,7 +33,7 @@ class Transformer
 
         $io->write('<info>Success: Imposter transformed vendor files.</info>', true);
 
-        self::updateInstalledJson($io, $autoloads);
+        self::updateInstalledJson($io);
 
         $invalidAutoloads = $imposter->getInvalidAutoloads();
         if (! empty($invalidAutoloads)) {
@@ -55,7 +55,7 @@ class Transformer
         $io->write('', true);
     }
 
-    private static function updateInstalledJson($io, $autoloads)
+    private static function updateInstalledJson($io)
     {
         $path = getcwd() . '/vendor/composer/installed.json';
 
@@ -92,21 +92,6 @@ class Transformer
         $projectNameSpace = $projectConfig->getImposterNamespace();
 
         foreach ($arrayContent['packages'] as &$package) {
-            $found = false;
-
-            foreach ($autoloads as $autoload) {
-                if (strpos($autoload, $package['name']) !== false) {
-                    $found = true;
-                    break;
-                }
-            }
-
-            // We check if the current package is in the loaded autoloads processed by imposter
-            // if not it was probably excluded, and thus we dont have to change its namespace in installed.json
-            if (!$found) {
-                continue;
-            }
-
             if (!isset($package['autoload']) || !isset($package['autoload']['psr-4'])) {
                 continue;
             }
